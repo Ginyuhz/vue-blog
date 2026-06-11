@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "terminal": {
+      "command": "cmd",
+      "args": [],
+      "env": {},
+      "description": "本地终端 - 执行 shell 命令"
+    },
+    "python": {
+      "command": "python",
+      "args": ["-m", "mcp"],
+      "env": {},
+      "description": "Python 服务 - 执行 Python 脚本和 FastAPI 后端"
+    },
+    "git": {
+      "command": "git",
+      "args": [],
+      "env": {},
+      "description": "Git 服务 - 版本控制"
+    }
+  }
+}

@@ -1,0 +1,494 @@
+/* common.css - 星巴克风格组件样式 */
+
+/* ===== 卡片 ===== */
+.card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: 0 0 0.5px rgba(0,0,0,0.14), 0 2px 4px rgba(0,0,0,0.24);
+}
+
+/* ===== 按钮 ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);  /* 全圆角药丸形状 */
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-tight);
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.95);  /* 点击缩放效果 */
+}
+
+.btn-primary {
+  background: var(--color-green-accent);
+  color: var(--color-white);
+  border-color: var(--color-green-accent);
+}
+
+.btn-primary:hover {
+  background: var(--color-starbucks);
+  border-color: var(--color-starbucks);
+}
+
+.btn-secondary {
+  background: var(--color-house-green);
+  color: var(--color-white);
+  border-color: var(--color-house-green);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-green-accent);
+  color: var(--color-green-accent);
+}
+
+.btn-outline:hover {
+  background: rgba(0, 117, 74, 0.1);
+}
+
+.btn-danger {
+  background: var(--color-error);
+  color: var(--color-white);
+  border-color: var(--color-error);
+}
+
+.btn-danger:hover {
+  background: darken(var(--color-error), 10%);
+}
+
+.btn-dark {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.btn-dark-outline {
+  background: transparent;
+  border: 1px solid var(--color-text-black);
+  color: var(--color-text-black);
+}
+
+.btn-inverted {
+  background: var(--color-white);
+  color: var(--color-green-accent);
+  border-color: var(--color-white);
+}
+
+.btn-inverted:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ===== 列表 ===== */
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.article-item {
+  background: var(--color-card-bg);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.article-item:hover {
+  box-shadow: 0 0 0.5px rgba(0,0,0,0.14), 0 4px 8px rgba(0,0,0,0.24);
+  transform: translateY(-2px);
+}
+
+/* ===== 标题 ===== */
+.article-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-starbucks);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.article-title:hover {
+  color: var(--color-green-accent);
+}
+
+/* ===== 摘要 ===== */
+.article-excerpt {
+  font-size: 0.875rem;
+  color: var(--color-text-black-soft);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* ===== 元信息 ===== */
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--color-text-black-soft);
+}
+
+.article-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: rgba(0, 117, 74, 0.1);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  color: var(--color-green-accent);
+  letter-spacing: var(--letter-spacing-tight);
+  transition: var(--transition);
+}
+
+.tag:hover {
+  background: var(--color-green-accent);
+  color: var(--color-white);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ===== 分割线 ===== */
+.divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  margin: 1.6rem 0;
+}
+
+/* ===== 加载状态 ===== */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: var(--color-text-black-soft);
+}
+
+.loading-spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--color-green-accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== 空状态 ===== */
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--color-text-black-soft);
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== 表单 ===== */
+.form-group {
+  margin-bottom: 1.6rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-black);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  background: var(--color-neutral-cool);
+  font-size: 0.875rem;
+  letter-spacing: var(--letter-spacing-tight);
+  transition: var(--transition);
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--color-green-accent);
+  box-shadow: 0 0 0 3px rgba(0, 117, 74, 0.1);
+}
+
+.form-input:invalid {
+  border-color: var(--color-error);
+  background: rgba(200, 32, 20, 0.05);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* ===== 消息提示 ===== */
+.message {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.message-success {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--color-success);
+}
+
+.message-error {
+  background: rgba(200, 32, 20, 0.05);
+  color: var(--color-error);
+}
+
+/* ===== 分页 ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination-item {
+  padding: 8px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  letter-spacing: var(--letter-spacing-tight);
+  transition: var(--transition);
+}
+
+.pagination-item:hover {
+  border-color: var(--color-green-accent);
+  color: var(--color-green-accent);
+}
+
+.pagination-item.active {
+  background: var(--color-green-accent);
+  color: var(--color-white);
+  border-color: var(--color-green-accent);
+}
+
+/* ===== 工具类 ===== */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-green-accent);
+}
+
+.text-secondary {
+  color: var(--color-text-black-soft);
+}
+
+.text-starbucks {
+  color: var(--color-starbucks);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.bg-house-green {
+  background: var(--color-house-green);
+}
+
+.bg-neutral-warm {
+  background: var(--color-neutral-warm);
+}
+
+.bg-ceramic {
+  background: var(--color-ceramic);
+}
+
+.mt-1 { margin-top: 0.8rem; }
+.mt-2 { margin-top: 1.6rem; }
+.mt-3 { margin-top: 2.4rem; }
+.mb-1 { margin-bottom: 0.8rem; }
+.mb-2 { margin-bottom: 1.6rem; }
+.mb-3 { margin-bottom: 2.4rem; }
+
+.hidden { display: none; }
+.visible { display: block; }
+
+/* ===== 特色区域 - 深绿色背景 ===== */
+.feature-band {
+  background: var(--color-house-green);
+  color: var(--color-text-white);
+  padding: 3rem 1.6rem;
+  margin: 2rem 0;
+  border-radius: var(--radius);
+}
+
+.feature-band h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.feature-band p {
+  color: var(--color-text-white-soft);
+  line-height: 1.6;
+}
+
+/* ===== PrismJS 代码高亮主题 - 星巴克风格 ===== */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #e6e1d9;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.6;
+  tab-size: 2;
+  hyphens: none;
+}
+
+pre[class*="language-"] {
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  overflow: auto;
+  border-radius: var(--radius);
+  background: var(--color-house-green);
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  white-space: normal;
+  background: var(--color-neutral-cool);
+}
+
+/* 注释 */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #9da5b4;
+  font-style: italic;
+}
+
+/* 标点符号 */
+.token.punctuation {
+  color: #e6e1d9;
+}
+
+/* 属性名 */
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #d4a373;
+}
+
+/* 选择器/标签 */
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #d4e9e2;
+}
+
+/* 操作符 */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #e6e1d9;
+}
+
+/* 关键词 */
+.token.keyword,
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #cba258;
+}
+
+/* 正则表达式 */
+.token.regex,
+.token.important,
+.token.variable {
+  color: #d4a373;
+}
+
+/* 重要标记 */
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+/* 命名空间 */
+.token.entity {
+  cursor: help;
+}
+
+/* 行号 */
+pre[class*="language-"]:before {
+  content: attr(class);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
